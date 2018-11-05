@@ -12,7 +12,7 @@ class PlateCheckerForm extends PureComponent {
     e.preventDefault()
     console.log( 'plate number is not valid' )
 
-    if (this.plateNumberIsValid(this.state.plateNumber)) {
+    if (this.plateNumberIsValid(this.state.plateNumber) && this.state.country.length > 0) {
       this.setState({errorMessage: ''})
       this.props.setPlate(this.state.plateNumber, this.state.country)
       if (this.state.country === 'NL' ) {
@@ -22,7 +22,7 @@ class PlateCheckerForm extends PureComponent {
       }
     }
     else {
-      this.setState({errorMessage: 'Please enter a valid License Plate Number.'})
+      this.setState({errorMessage: 'Please enter a valid License Plate.'})
     }
   }
 
