@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { setPlate, fetchPlateData, clearPlateData } from '../actions/plates'
 import PlateCheckerForm from './PlateCheckerForm';
 import PlateDisplay from './PlateDisplay';
+import PlateData from './PlateData';
 
 class PlateChecker extends PureComponent {
   render() {
@@ -11,6 +12,7 @@ class PlateChecker extends PureComponent {
         ZBLH89
         <PlateCheckerForm setPlate={this.props.setPlate} fetchPlateData={this.props.fetchPlateData} clearPlateData={this.props.clearPlateData} />
         <PlateDisplay plate={this.props.plate} plateData={this.props.plateData} />
+        <PlateData plate={this.props.plate} plateData={this.props.plateData} />
       </div>
     );
   }
