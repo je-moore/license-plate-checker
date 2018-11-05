@@ -1,0 +1,38 @@
+.plate-display {
+  height: 1em;
+  padding: 0.3em 0.06em;
+  font-size: 250%;
+  background-color: #FFDD00;
+  width: 7em;
+  margin: 1em auto;
+  border-radius: 0.1em;
+}
+
+.plate-display-number {
+  display: inline-block;
+  padding: 0 0 0 1em;
+  letter-spacing: 2px;
+  font-weight: 500;
+  font-size: 110%;
+  line-height: 0.8em;
+  color: inherit;
+}
+
+.plate-display-NL {
+  background: #FFDD00 url("plate-left-NL.png") no-repeat -2px;
+  background-size: 0.8em;
+  border: 0.05em solid black;
+}
+
+.plate-display-BE {
+  background: #FFFFFF url("plate-left-BE.png") no-repeat -2px;
+  background-size: 0.8em;
+  color: #DD0000;
+  border: 0.05em solid #DD0000;
+}
+
+.plate-display-FR {
+  background: #FFFFFF url("plate-left-FR.png") no-repeat -2px;
+  background-size: 0.8em;
+  border: 0.05em solid black;
+}

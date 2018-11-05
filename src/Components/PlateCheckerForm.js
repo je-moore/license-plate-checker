@@ -33,7 +33,7 @@ class PlateCheckerForm extends PureComponent {
           <option value=""> --select-- </option>
           <option value="BE">België</option>
           <option value="FR">Frankrijk</option>
-          <option value="NL">Netherlands</option>
+          <option value="NL">Nederland</option>
         </select> 
       </label>
       <button type="submit">Check</button>
