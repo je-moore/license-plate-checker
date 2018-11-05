@@ -16,3 +16,10 @@
 .App-link {
   color: #61dafb;
 }
+
+.errorMessage {
+  font-size: 80%;
+  color: red;
+  font-weight: bold;
+  padding: 1em 0 ;
+}

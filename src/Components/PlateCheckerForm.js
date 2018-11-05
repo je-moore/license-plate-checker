@@ -1,4 +1,5 @@
-import React, { PureComponent } from 'react';
+import React, { PureComponent } from 'react'
+import './style/PlateCheckerForm.css'
 
 class PlateCheckerForm extends PureComponent {
 
@@ -9,16 +10,37 @@ class PlateCheckerForm extends PureComponent {
 
   handleSubmit = (e) => {
     e.preventDefault()
-    this.props.setPlate(this.state.plateNumber, this.state.country)
-    if (this.state.plateNumber && this.state.country === 'NL' ) {
-      this.props.fetchPlateData(this.state.plateNumber)
-    } else {
-      this.props.clearPlateData()
+    console.log( 'plate number is not valid' )
+
+    if (this.plateNumberIsValid(this.state.plateNumber)) {
+      this.setState({errorMessage: ''})
+      this.props.setPlate(this.state.plateNumber, this.state.country)
+      if (this.state.country === 'NL' ) {
+        this.props.fetchPlateData(this.state.plateNumber)
+      } else {
+        this.props.clearPlateData()
+      }
+    }
+    else {
+      this.setState({errorMessage: 'Please enter a valid License Plate Number.'})
     }
   }
 
   handleChange = (e) => {
     this.setState({ [e.target.name]: e.target.value })
+  }
+
+  plateNumberIsValid = (plateNumber) => {
+    if (plateNumber.length > 9 || plateNumber.length < 6) {
+      return false
+    }
+    let i = plateNumber.length;
+    while (i--) {
+      if ( !/[0-9,A-Z]/.test( plateNumber.charAt(i) ) ) {
+        return false        
+      }
+    }
+    return true
   }
 
   render() {
@@ -37,6 +59,7 @@ class PlateCheckerForm extends PureComponent {
         </select> 
       </label>
       <button type="submit">Check</button>
+      <div className="errorMessage">{this.state.errorMessage}</div>
     </form>)
   }
 
