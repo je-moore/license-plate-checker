@@ -9,6 +9,12 @@ class PlateCheckerForm extends PureComponent {
 
   handleSubmit = (e) => {
     e.preventDefault()
+    this.props.setPlate(this.state.plateNumber, this.state.country)
+    if (this.state.plateNumber && this.state.country === 'NL' ) {
+      this.props.fetchPlateData(this.state.plateNumber)
+    } else {
+      this.props.clearPlateData()
+    }
   }
 
   handleChange = (e) => {
