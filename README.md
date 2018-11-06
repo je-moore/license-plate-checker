@@ -1,6 +1,25 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+For some of the cars that we list there is a need to show a formatted styled license plate and verify the car details for a specific license number.
+
+After inputing a licensePlate and a country it will:
+
+- Validate (if possible).  A licence plate has a length of 6-9 character including depending on the country.
+- Get some car data if this is a dutch licenceplate using the following end-point:
+
+		https://opendata.rdw.nl/resource/m9d7-ebf2.json?kenteken=licensePlate
+
+- Show a styled license plate of the selected country as a result.  Use the following as a visual reference 
+
+		https://upload.wikimedia.org/wikipedia/commons/e/eb/NL_license_plate.jpg
+
+And some rules of the dutch licence plate and other countries:
+
+		https://en.wikipedia.org/wiki/Vehicle_registration_plates_of_the_Netherlands
+		https://en.wikipedia.org/wiki/Vehicle_registration_plates_of_France
+		https://en.wikipedia.org/wiki/Vehicle_registration_plates_of_Belgium
 
 ## Available Scripts
+
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 In the project directory, you can run:
 

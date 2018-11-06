@@ -22,6 +22,7 @@ class PlateCheckerForm extends PureComponent {
       }
     }
     else {
+      this.props.clearPlateData()
       this.setState({errorMessage: 'Please enter a valid License Plate.'})
     }
   }
