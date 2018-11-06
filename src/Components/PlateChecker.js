@@ -22,8 +22,7 @@ class PlateChecker extends PureComponent {
 
   render() {
     return (
-      <div className="PlateChecker">
-        ZBLH89
+      <div className="plateChecker">
         <PlateCheckerForm setPlate={this.props.setPlate} fetchPlateData={this.props.fetchPlateData} clearPlateData={this.props.clearPlateData} />
         <PlateDisplay plate={this.props.plate} plateData={this.props.plateData} addDashes={this.addDashes} />
         <PlateData plate={this.props.plate} plateData={this.props.plateData} />

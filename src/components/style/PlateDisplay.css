@@ -1,32 +1,32 @@
 .plate-display {
   height: 1em;
-  padding: 0.3em 0.06em 0.3em 1em;
-  font-size: 260%;
+  padding: 0.1em 0.3em 0.1em 1em;
+  font-size: 5em;
   background-color: #FFDD00;
-  width: 6em;
-  margin: 1em auto;
+  min-width: 5em;
+  margin: 0.1em auto 0.4em;
   border-radius: 0.1em;
-  line-height: 1.0em;
-  font-weight: 700;
+  line-height: 0.95em;
+  font-weight: 600;
   letter-spacing: 2px;
   display: inline-block;
 }
 
 .plate-display-NL {
-  background: #FFDD00 url("plate-left-NL.png") no-repeat -2px;
-  background-size: 0.8em;
+  background: #FFDD00 url("plate-left-NL.png") no-repeat -1px;
+  background-size: 0.6em;
   border: 0.05em solid black;
 }
 
 .plate-display-BE {
-  background: #FFFFFF url("plate-left-BE.png") no-repeat -2px;
-  background-size: 0.8em;
+  background: #FFFFFF url("plate-left-BE.png") no-repeat -1px;
+  background-size: 0.6em;
   color: #DD0000;
   border: 0.05em solid #DD0000;
 }
 
 .plate-display-FR {
-  background: #FFFFFF url("plate-left-FR.png") no-repeat -2px;
-  background-size: 0.8em;
+  background: #FFFFFF url("plate-left-FR.png") no-repeat -1px;
+  background-size: 0.6em;
   border: 0.05em solid black;
 }

@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  margin-bottom: 1em;
 }
 
 .App-header {
@@ -11,6 +12,7 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  margin-bottom: 1em;
 }
 
 .App-link {
@@ -22,4 +24,14 @@
   color: red;
   font-weight: bold;
   padding: 1em 0 ;
+}
+
+.plateChecker form label {
+  margin: 0 1em;
+  font-weight: bold;
+  font-size: 80%;
+}
+
+.plateChecker input, .plateChecker select {
+  margin: 0 0 0 0.5em;
 }
