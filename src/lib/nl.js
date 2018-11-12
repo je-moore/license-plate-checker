@@ -1,7 +1,7 @@
 import * as request from 'superagent'
 
 export function fetchData(plateNumber) {
-  return request(`https://opendata.rdw.nl/resource/m9d7-ebf2.json?kenteken=${plateNumber}`).then( normalize )
+  return request(`https://opendata.rdw.nl/resource/m9d7-ebf2.json?kenteken=${encodeURI(plateNumber)}`).then( normalize )
 }
 
 function normalize(response) {
