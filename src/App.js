@@ -1,8 +1,8 @@
-import React, { PureComponent } from 'react';
-import PlateChecker from './components/PlateChecker';
+import React, { PureComponent } from 'react'
+import PlateChecker from './components/PlateChecker'
 import { Provider } from 'react-redux'
-import store from './store.js'
-import './App.css';
+import store from './store'
+import './App.css'
 
 class App extends PureComponent {
   render() {
@@ -21,4 +21,4 @@ class App extends PureComponent {
   }
 }
 
-export default App;
+export default App

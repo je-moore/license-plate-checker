@@ -1,9 +1,9 @@
-import React, { PureComponent } from 'react';
+import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
 import { setPlate, fetchPlateData, clearPlateData } from '../actions/plates'
-import PlateCheckerForm from './PlateCheckerForm';
-import PlateDisplay from './PlateDisplay';
-import PlateData from './PlateData';
+import PlateCheckerForm from './PlateCheckerForm'
+import PlateDisplay from './PlateDisplay'
+import PlateData from './PlateData'
 
 class PlateChecker extends PureComponent {
 
