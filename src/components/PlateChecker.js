@@ -1,30 +1,32 @@
-import React, { PureComponent } from 'react'
-import { connect } from 'react-redux'
-import { fetchPlateData, clearPlateData } from '../actions/plates'
-import PlateCheckerForm from './PlateCheckerForm'
-import PlateDisplay from './PlateDisplay'
-import PlateData from './PlateData'
+import React, { PureComponent } from "react";
+import { connect } from "react-redux";
+import { fetchPlateData, clearPlateData } from "../actions/plates";
+import PlateCheckerForm from "./PlateCheckerForm";
+import PlateDisplay from "./PlateDisplay";
+import PlateData from "./PlateData";
 
 class PlateChecker extends PureComponent {
-
   render() {
     return (
       <div className="plateChecker">
-        <PlateCheckerForm 
+        <PlateCheckerForm
           fetchPlateData={this.props.fetchPlateData}
-          clearPlateData={this.props.clearPlateData} />
+          clearPlateData={this.props.clearPlateData}
+        />
         <PlateDisplay plateData={this.props.plateData} />
         <PlateData plateData={this.props.plateData} />
       </div>
     );
   }
-
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
   return {
-    plateData: state.plateData 
-  }
-}
+    plateData: state.plateData
+  };
+};
 
-export default connect(mapStateToProps, { fetchPlateData, clearPlateData })(PlateChecker)
+export default connect(
+  mapStateToProps,
+  { fetchPlateData, clearPlateData }
+)(PlateChecker);
