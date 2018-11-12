@@ -3,11 +3,13 @@ export function fetchData(plateNumber) {
 }
 
 function normalize(plateNumber) {
-  let normalizedData = {
-    land: 'BE',
-    kenteken_hyphenated: addHyphens(plateNumber)
+  const normalizedData = {
+    display: {
+      land: 'BE',
+      kenteken_hyphenated: addHyphens(plateNumber)
+    },
+    listing: null
   }
-  console.log(normalizedData)
   return Promise.resolve(normalizedData)
 }
 

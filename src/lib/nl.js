@@ -5,10 +5,29 @@ export function fetchData(plateNumber) {
 }
 
 function normalize(response) {
-  let normalizedData = response.body[0]
-  normalizedData.land = 'NL'
-  normalizedData.kenteken_hyphenated = addHyphens(normalizedData.kenteken)
-  console.log(normalizedData)
+  const data = response.body[0]
+  const normalizedData = {
+    display: {
+      land: 'NL',
+      kenteken_hyphenated: addHyphens(data.kenteken)
+    },
+    listing: {
+      'Aantal Cilinders': data.aantal_cilinders,
+      'Aantal Deuren': data.aantal_deuren,
+      'Aantal Rolstoelplaatsen': data.aantal_rolstoelplaatsen,
+      'Aantal Wielen': data.aantal_wielen,
+      'Aantal Zitplaatsen': data.aantal_zitplaatsen,
+      'Datum Eerste Afgifte': data.datum_eerste_afgifte_nederland,
+      'Datum Eerste Toelating': data.datum_eerste_toelating,
+      'Datum Tenaamstelling': data.datum_tenaamstelling,
+      'Eerste Kleur': data.eerste_kleur,
+      'Inrichting': data.inrichting,
+      'Lengte': data.lengte,
+      'Massa Ledig Voertuig': data.massa_ledig_voertuig,
+      'Merk': data.merk,
+      'Verzekerd': data.wam_verzekerd
+    }
+  }
   return normalizedData
 }
 
