@@ -12,7 +12,6 @@ class PlateCheckerForm extends PureComponent {
     e.preventDefault()
     if (this.plateNumberIsValid(this.state.plateNumber) && this.state.country.length > 0) {
       this.setState({errorMessage: ''})
-      this.props.setPlate(this.state.plateNumber, this.state.country)
       this.props.fetchPlateData(this.state.plateNumber, this.state.country)
     }
     else {
