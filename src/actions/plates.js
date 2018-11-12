@@ -1,4 +1,4 @@
-import * as request from 'superagent'
+import { countries } from '../lib/countries'
 
 export const SET_PLATE = 'SET_PLATE'
 export const SET_PLATE_DATA = 'SET_PLATE_DATA'
@@ -13,11 +13,12 @@ export function setPlate(plateNumber, country) {
   }
 }
 
-export const fetchPlateData = (plateNumber) => (dispatch) => {
-  request(`https://opendata.rdw.nl/resource/m9d7-ebf2.json?kenteken=${plateNumber}`)
-    .then(response => dispatch({
+export const fetchPlateData = (plateNumber, country) => (dispatch) => {
+  countries[country].fetchData(plateNumber)
+  // request(`https://opendata.rdw.nl/resource/m9d7-ebf2.json?kenteken=${plateNumber}`)
+    .then(result => dispatch({
       type: SET_PLATE_DATA,
-      payload: response.body[0]
+      payload: result
     }))
     .catch(err => alert(err))
 }
