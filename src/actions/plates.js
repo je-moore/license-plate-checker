@@ -7,8 +7,8 @@ export function setPlate(plateNumber, country) {
   return {
     type: SET_PLATE,
     payload: {
-      kenteken: plateNumber,
-      land: country
+      plateNumber,
+      country
     }
   }
 }
