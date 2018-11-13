@@ -10,9 +10,8 @@ export function fetchData(plateNumber) {
 }
 
 function normalize(response) {
-  console.log('response', response)
-  if (response === undefined) return null
-  if (response.body.length === 0) return null
+  if (response === undefined) return null;
+  if (response.body.length === 0) return null;
 
   const data = response.body[0];
   const normalizedData = {
@@ -41,16 +40,12 @@ function normalize(response) {
       Verzekerd: data.wam_verzekerd
     }
   };
-  console.log(data);
   return normalizedData;
 }
-
-
 
 // hyphen logic adapted from https://nl.wikipedia.org/wiki/Nederlands_kenteken
 
 function addHyphens(plateDigits, afgifte, voertuigsoort) {
-
   const hyphens = lookUpHyphens(afgifte, voertuigsoort);
 
   return (
@@ -60,44 +55,38 @@ function addHyphens(plateDigits, afgifte, voertuigsoort) {
     "-" +
     plateDigits.slice(hyphens[1])
   );
-
 }
 
-
 function lookUpHyphens(afgifte, voertuigsoort) {
-
   const hyphenPositions = {
     Personenauto: {
       "30-03-2015": [2, 5],
       "05-03-2013": [1, 4],
-      "19-05-1988": [2, 5],
+      "19-05-1988": [2, 5]
     },
     Bromfiets: {
       "16-01-2015": [3, 5],
       "11-08-2006": [1, 4],
-      "01-09-2005": [2, 5],
+      "01-09-2005": [2, 5]
     }
-  }
+  };
 
-  if ( !Object.keys( hyphenPositions ).includes(voertuigsoort) ) {
+  if (!Object.keys(hyphenPositions).includes(voertuigsoort)) {
     return [2, 4];
   }
 
-  const plateDate = moment(afgifte, ['DD/MM/YYYY']);
-  const formatDates = Object.keys( hyphenPositions[voertuigsoort] ).map(
-    dateString => moment(dateString, ['DD-MM-YYYY'])
-  ).sort(function (a, b) {
-    return b - a;
-  });
+  const plateDate = moment(afgifte, ["DD/MM/YYYY"]);
+  const formatDates = Object.keys(hyphenPositions[voertuigsoort])
+    .map(dateString => moment(dateString, ["DD-MM-YYYY"]))
+    .sort(function(a, b) {
+      return b - a;
+    });
 
   for (let date of formatDates) {
-    if ( plateDate.isSameOrAfter( date ) ) {
-      return hyphenPositions[voertuigsoort][ date.format('DD-MM-YYYY') ]
+    if (plateDate.isSameOrAfter(date)) {
+      return hyphenPositions[voertuigsoort][date.format("DD-MM-YYYY")];
     }
   }
 
   return [2, 4];
-
 }
-
-// ZBLH89

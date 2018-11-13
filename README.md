@@ -17,7 +17,7 @@ And some rules of the dutch licence plate and other countries:
 		https://en.wikipedia.org/wiki/Vehicle_registration_plates_of_France
 		https://en.wikipedia.org/wiki/Vehicle_registration_plates_of_Belgium
 
-Example existing NL license plate to plug in: `ZBLH89`
+Existing NL license plates for demonstration: `ZBLH89 PL39YG D644TB ZN74SX`
 
 ## Available Scripts
 
