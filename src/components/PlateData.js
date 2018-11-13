@@ -2,8 +2,7 @@ import * as React from "react";
 import "./style/PlateData.css";
 
 export default function PlateData(props) {
-  if (!props.plateData) return "";
-  if (!props.plateData.listing)
+  if (!props.plateData || !props.plateData.listing)
     return (
       <div className="plate-data-not-found">
         No Records Found For This Plate
