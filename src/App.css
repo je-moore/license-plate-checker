@@ -1,4 +1,9 @@
+div {
+  box-sizing: border-box;
+}
+
 .App {
+  width: 100%;
   text-align: center;
   margin-bottom: 1em;
 }
